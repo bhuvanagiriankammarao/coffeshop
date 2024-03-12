@@ -1,61 +1,56 @@
-import React from 'react'
-import { useState} from "react";
-
+import React from "react";
+import "./Register.css";
+import { useContext, useState } from "react";
+import { UserContext } from "../../App";
 export default function Register() {
-    const[username, setUsername] = useState();
-    const[password, setPassword] = useState();
-    const[emailid, setEmailid] = useState();
-    const[login, setLogin] = useState([]);
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const newDetails = { uname: username, pass: password, email:emailid };
-        setLogin([...login, newDetails]);
-        setUsername('');
-        setPassword('');
-        setEmailid('');
-    };
+  const { flag, setFlag, user, setUser, users, setUsers } =
+    useContext(UserContext);
+  // const [user, setUser] = useState({ name: "", email: "", pass: "" });
+  const newUser = () => {
+    setUsers((prev) => [...prev, user]);
+    setFlag(() => 2);
+  };
+
   return (
-    <div className='main'>
-    <form onSubmit={handleSubmit}>
-        <div>
+    <div id="myModal" className="modal">
+      <div className="modal-content">
+        <div className="Rigister-header">
+          <div className="Register-signup-title">Sign Up</div>
+          <div onClick={() => setFlag(() => 0)} className="close">
+            &times;
+          </div>
+        </div>
+        <div className="Register-text-box">
           <input
-            type="text"
-            value={username}
             onChange={(e) =>
-            setUsername(e.target.value)}
+              setUser((prev) => ({ ...prev, name: e.target.value }))
+            }
             placeholder="Enter Name"
+            autoFocus
           ></input>
         </div>
-        <div>
+        <div className="Register-text-box">
           <input
-            type="password"
-            value={emailid}
             onChange={(e) =>
-            setEmailid(e.target.value)}
+              setUser((prev) => ({ ...prev, email: e.target.value }))
+            }
             placeholder="Enter Email"
           ></input>
         </div>
-        <div>
+        <div className="Register-text-box">
           <input
-            type="password"
-            value={password}
             onChange={(e) =>
-            setPassword(e.target.value)}
-            placeholder="Enter Password"
+              setUser((prev) => ({ ...prev, pass: e.target.value }))
+            }
+            type="password"
+            placeholder="New Password"
           ></input>
         </div>
-          <button>Submit</button>
-          </form> 
-          <div>
-                <h2>Registered Users</h2>
-                <ul>
-                    {login.map((user, index) => (
-                        <li key={index}>
-                            Username: {user.uname}, Password: {user.pass}, Email: {user.email}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+
+        <div>
+          <button onClick={newUser}> Sign Up</button>
         </div>
-       );
+      </div>
+    </div>
+  );
 }

@@ -42,34 +42,6 @@ export default function Cart() {
 
   return (
     <div className="Cart-container">
-      {products.map((elem) => {
-        if (cartItems[elem.id]) {
-          return (
-            <div key={elem.id} ClassName="Cart-items">
-              <br></br>
-              <table>
-                <tr>
-                  <td> <img src={elem.image} width={75} height={70}></img><br></br></td>
-                  <td><b>{elem.name}</b>-{elem.price} &#8377;</td>
-                  <td> <button className="Cart-button"
-                  onClick={() => updateCart(elem.id, cartItems[elem.id] - 1)}>
-                  -
-                  </button>
-                  {cartItems[elem.id]}
-                  <button  className="Cart-button"
-                    onClick={() => updateCart(elem.id, cartItems[elem.id] + 1)}>
-                  +
-                  </button></td>
-                </tr>
-              </table>
-              <hr></hr>
-            </div>
-            
-          );
-        }
-      })}
-      <div className="Order-value">Order Value:<h2>{orderValue} &#8377;</h2> </div>
-=======
       {Object.keys(cartItems).length > 0 ? (
         <>
           <div className="Cart-div-left">
@@ -132,6 +104,6 @@ export default function Cart() {
           <img src={cartEmpty} alt="Cart is empty"></img>
         </div>
       )}
-      </div>
+    </div>
   );
 }

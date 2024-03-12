@@ -1,7 +1,4 @@
 .Cart-container {
-    display:block;
-    justify-content:flex-start;
-    background-color: burlywood;
     text-align: left;
     font-size: 20px;
     padding: 20px;
@@ -11,32 +8,6 @@
 }
 .Cart-items{
     width:200px;
-    text-align: center;
-    align-items: center;
-    display: block;
-}
-.Cart-button {
-    background-color: #3b120f;
-    width:35px;
-    padding:0px;
-    margin: 8px;
-    border-radius: 10px;
-    color: white;
-    outline:auto;
-    outline-color: silver;
-
-}
-.Order-value{
-    border: 1px solid black;
-    height: fit-content;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    background-color: #411f1c;
-
-}
-.Order-value h2{
-    color:  chartreuse;
     text-align: left;
     background-color: silver;
 }
@@ -92,4 +63,5 @@
     border-left: 1px solid silver;
     width:300px;
     height: 400px;
-    }
+    
+}
