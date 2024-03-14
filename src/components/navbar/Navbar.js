@@ -15,9 +15,12 @@ export default function Navbar() {
       <div className="title">Irish Cafe</div>
       <div><h3>Hi {user.name}!</h3></div>
       <div className="links">
+        {
+          total>0 &&(
+            <Link to={`${PATH}/order`}> Orders({orders.length}) </Link>
+        )
+      }
         <Link to={`${PATH}/`}> Products </Link>
-
-        <Link to={`${PATH}/order`}> Orders({orders.length}) </Link>
         {
         total>0 &&(
         <Link to={`${PATH}/cart`}> Cart({total}) </Link>
