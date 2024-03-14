@@ -5,7 +5,7 @@ import { UserContext } from "../../App";
 export default function Register() {
   const { flag, setFlag, user, setUser, users, setUsers } =
     useContext(UserContext);
-  // const [user, setUser] = useState({ name: "", email: "", pass: "" });
+  const [user1, setUser1] = useState({ name: "ankam", email: "ankam@gmail.com", pass: "1234" });
   const newUser = () => {
     setUsers((prev) => [...prev, user]);
     setFlag(() => 2);
@@ -16,7 +16,7 @@ export default function Register() {
       <div className="modal-content">
         <div className="Rigister-header">
           <div className="Register-signup-title">Sign Up</div>
-          <div onClick={() => setFlag(() => 0)} className="close">
+          <div onClick={() => setFlag(() => 2)} className="close">
             &times;
           </div>
         </div>

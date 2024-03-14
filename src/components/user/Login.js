@@ -5,6 +5,7 @@ import Register from "./Register";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Login.css";
 import { useState } from "react";
+import Cart from "../cart/Cart";
 export default function Login() {
   const { flag, setFlag, user, setUser, users, setUsers } =
     useContext(UserContext);
@@ -54,7 +55,7 @@ export default function Login() {
             </span>
           </div>
           <div>
-            <button onClick={validateUser}>Log in</button>
+            <button onClick={validateUser}>Login</button>
           </div>
           <br></br>
           <div>Forgot Password?</div>

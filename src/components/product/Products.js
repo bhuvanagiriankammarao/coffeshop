@@ -4,7 +4,7 @@ import products from "./products.json"
 import "./Product.css"
 import AddButton from "./AddButton.js";
 export default function Products() {
-  const { cartItems, setCartItems } = useContext(AppContext);
+  const { cartItems, setCartItems, } = useContext(AppContext);
    const updateCart = (id, qty) => {
     setCartItems((prev) => ({ ...prev, [id]: qty }));
   };  
@@ -27,8 +27,8 @@ export default function Products() {
             <p style={{textAlign:"justify",padding:"10px"}}>{value.desc}</p>
             <div className="priceBtn">
             <div className="priceTxt">₹{value.price}</div>
-            <div className="Product-button"><AddButton id={value.id}/></div>
-            {/* <button className="Product-button" onClick={() => addtoCart(value.id)}>Add</button> */}
+            {/* <div className="Product-button"><AddButton id={value.id}/></div> */}
+            <button className="Product-button" onClick={() => addtoCart(value.id)}>Add</button> 
             </div>
           </div>
         ))}
