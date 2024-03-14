@@ -29,7 +29,7 @@ function App() {
               <hr></hr>
               <Routes>
                 <Route path={`${PATH}/`} element={<Products />} />
-                <Route path={`${PATH}/order`} index element={<Orders />} />
+                <Route path={`${PATH}/order`}  element={<Orders />} />
                 <Route path={`${PATH}/cart`} index element={<Cart />} />
               </Routes>
               <Footer />
