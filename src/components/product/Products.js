@@ -9,6 +9,7 @@ export default function Products() {
   // const addtoCart = (id) => {
   //   setCartItems((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + 1 }));
   // };
+  
 
   return (
     <div className="Product-container">

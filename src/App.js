@@ -11,6 +11,7 @@ import Footer from "./components/footer/Footer.js";
 import Orders from "./components/order/Orders.js";
 import Register from "./components/user/Register.js";
 
+
 function App() {
   const PATH = process.env.REACT_APP_PATH;
   const { flag, setFlag } = useContext(AppContext);
@@ -26,6 +27,7 @@ function App() {
           <Route path={`${PATH}/cart`} element={<Cart />} />
           <Route path={`${PATH}/login`} element={<Login />} />
           <Route path={`${PATH}/register`} element={<Register />} />
+         
         </Routes>
         <Footer />
       </Router>
