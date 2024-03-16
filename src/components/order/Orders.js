@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../context/appContext";
-import { UserContext } from "../../App";
 import "./Orders.css";
 export default function Orders() {
-  const { user } = useContext(UserContext);
-  const { orders, products } = useContext(AppContext);
+  const { orders, products, user } = useContext(AppContext);
   const myOrders = orders.filter(elem=>elem.email===user.email)
   return (
     <div className="Orders-container">
@@ -18,7 +16,7 @@ export default function Orders() {
           </tr>
         )}
         {myOrders.map((elem, index) => (
-          <tr>
+          <tr key={index}>
             <td>{elem.date}</td>
             <td>{Object.keys(elem.details).length}</td>
             <td>₹{elem.total}</td>

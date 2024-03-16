@@ -1,36 +1,31 @@
 .navbar {
-    /* width: 1200px; */
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    margin:auto;
-    background-color:rgb(160, 61, 16)
-  }
+  /* width: 1200px; */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin:auto
+}
 
-  .title {
-    margin-left: 20px;
-    font-size: 35px;
-    font-family: 'Trebuchet MS';
+.title {
+  margin-left: 20px;
+  font-size: 35px;
 
-  }
-  
-  .links {
-    margin-right: 20px;
-    display: flex;
-    align-items: center;
+}
 
-  }
-  
-  .links a {
-    text-decoration: none;
-    font-family: 'Trebuchet MS';
-    color: black;
-    margin-left: 20px;
-    font-size: 25px;
-  }
+.links {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
 
-  .links a:hover{
-    font-weight: bold;
-  }
+}
 
+.links a {
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.links a:hover{
+  font-weight: bold;
+}

@@ -2,49 +2,20 @@
     margin: auto;
 }
 
-.container {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    /* column-gap: 40px; */
-    /* padding:150px; */
-    margin: auto;
-    background-image: url('../../bg1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* align-items:  center; */
-    /* justify-content: center; */
-
-}
-
-.leftBox {
-    width: 380px;
-    /* background-color: whitesmoke; */
-    padding: 40px;
-    font-size: large;
-    text-align: left;
-    /* border: 1px solid silver; */
-    color: black;
-    height: 400px;
-    /* margin-left: 0; */
-
-
-
-}
-
-.rightBox {
+.Login-container {
     width: 400px;
     padding: 40px;
-    height: 380px;
+    /* height: 380px; */
+    margin:30px auto;
     /* background-color: whitesmoke; */
-    background-color: bisque;
+    /* background-color: bisque; */
     /* margin-bottom: 10px; */
     border: 1px solid silver;
     box-shadow: 1px 1px 1px silver;
     border-radius: 10px;
 
 }
+
 
 input,button {
     width: 100%;
@@ -60,12 +31,15 @@ input,button {
 
 .newAccBtn {
     width: 60%;
-    background-color: green;
+    background-color: whitesmoke;
     border-radius: 10px;
+    outline: auto;
+    outline-color: silver;
+    color:#3b120f;
 }
 
 button {
-    background-color: #23a811;
+    background-color: #3b120f;
     color: white;
     font-weight: bold;
     margin-top: 30px;
@@ -110,3 +84,9 @@ input[type=password]:focus {
     color:red;
     padding:5px
 }
+
+.Login-signup-title {
+    font-size: 30px;
+    text-align: left;
+    width: 100%;
+  }

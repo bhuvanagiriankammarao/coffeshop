@@ -10,11 +10,12 @@
 }
 
 .modal-content {
-  margin: 5% auto;
   padding: 40px;
-  width: 500px;
-  background-color: bisque;
+  width: 400px;
+  margin:30px auto;
+  /* height: 380px; */
   border: 1px solid silver;
+    box-shadow: 1px 1px 1px silver;
   border-radius: 10px;
 }
 
@@ -43,4 +44,18 @@
 
 .Register-text-box{
   margin-top: 20px;
+}
+
+.Register-msg{
+  font-size: 20px;
+  font-weight: bold;
+  color:red;
+  padding:5px
+}
+
+.Register-login{
+  font-size: 20px;
+  font-weight: bold;
+  color:maroon;
+  padding:5px
 }

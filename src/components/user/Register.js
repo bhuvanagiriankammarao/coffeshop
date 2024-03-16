@@ -1,56 +1,66 @@
 import React from "react";
 import "./Register.css";
+import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { UserContext } from "../../App";
+import { AppContext } from "../../context/appContext";
+import { useNavigate } from "react-router-dom";
 export default function Register() {
-  const { flag, setFlag, user, setUser, users, setUsers } =
-    useContext(UserContext);
-  const [user1, setUser1] = useState({ name: "ankam", email: "ankam@gmail.com", pass: "1234" });
+  const [msg, setMsg] = useState();
+  const Navigate = useNavigate();
+  const { user, setUser, users, setUsers, flag, setFlag } =
+    useContext(AppContext);
+const PATH = process.env.REACT_APP_PATH
   const newUser = () => {
-    setUsers((prev) => [...prev, user]);
-    setFlag(() => 2);
+    if (Object.keys(user).length < 2) {
+      setMsg(() => "Please complete the form");
+    } else if (user.name === "" || user.email === "" || user.pass === "") {
+      setMsg(() => "Fields cannot be blank");
+    } else {
+      setUsers((prev) => [...prev, user]);
+      Navigate(`${PATH}/`)
+    }
   };
 
   return (
-    <div id="myModal" className="modal">
-      <div className="modal-content">
-        <div className="Rigister-header">
-          <div className="Register-signup-title">Sign Up</div>
-          <div onClick={() => setFlag(() => 2)} className="close">
-            &times;
-          </div>
-        </div>
-        <div className="Register-text-box">
-          <input
-            onChange={(e) =>
-              setUser((prev) => ({ ...prev, name: e.target.value }))
-            }
-            placeholder="Enter Name"
-            autoFocus
-          ></input>
-        </div>
-        <div className="Register-text-box">
-          <input
-            onChange={(e) =>
-              setUser((prev) => ({ ...prev, email: e.target.value }))
-            }
-            placeholder="Enter Email"
-          ></input>
-        </div>
-        <div className="Register-text-box">
-          <input
-            onChange={(e) =>
-              setUser((prev) => ({ ...prev, pass: e.target.value }))
-            }
-            type="password"
-            placeholder="New Password"
-          ></input>
-        </div>
-
-        <div>
-          <button onClick={newUser}> Sign Up</button>
-        </div>
+    <div className="modal-content">
+      <div className="Register-msg">{msg}</div>
+      <div className="Rigister-header">
+        <div className="Register-signup-title">Create Account</div>
+    
       </div>
+      <div className="Register-text-box">
+        <input
+          required
+          onChange={(e) =>
+            setUser((prev) => ({ ...prev, name: e.target.value }))
+          }
+          placeholder="Enter Name"
+          autoFocus
+        ></input>
+      </div>
+      <div className="Register-text-box">
+        <input
+          onChange={(e) =>
+            setUser((prev) => ({ ...prev, email: e.target.value }))
+          }
+          placeholder="Enter Email"
+        ></input>
+      </div>
+      <div className="Register-text-box">
+        <input
+          onChange={(e) =>
+            setUser((prev) => ({ ...prev, pass: e.target.value }))
+          }
+          type="password"
+          placeholder="New Password"
+        ></input>
+      </div>
+
+      <div>
+        <button onClick={newUser}> Sign Up</button>
+      </div>
+      <br></br>
+      <div className="Register-login">Already have an account? <Link to={`${PATH}/login`}>Sign in</Link></div>
     </div>
   );
 }

@@ -2,8 +2,8 @@
     display: flex;
     column-gap: 20px;
     row-gap: 30px;
-    /* margin:auto; */
-    /* width:1200px; */
+    margin:auto;
+    width:90%;
     /* align-items: left;
     justify-content: left; */
     flex-wrap: wrap;
@@ -20,7 +20,7 @@
 .Product-button{
     /* background-color: #3b120f; */
     width: 200px;
-    color:greenyellow;
+    color: hsl(4, 59%, 15%);
  
 }
 
